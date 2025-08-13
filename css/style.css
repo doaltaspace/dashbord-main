@@ -1,0 +1,516 @@
+/* Palet warna monokrom yang elegan */
+:root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 240 10% 3.9%; /* Near Black */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --primary: 18 65% 55%;                /* <-- (Earthen Terracotta) */
+    --primary-foreground: 0 0% 98%;      /* Near White */
+    --secondary: 240 4.8% 95.9%;         /* Light Gray */
+    --secondary-foreground: 240 5.9% 10%;
+    --border: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --text-muted: 240 5% 38%;        /* Adjusted darker for better contrast */
+    /* New surface tokens */
+    --surface-alt: 240 6% 97%;
+    --surface-warm: 18 55% 96%;
+    --surface-accent: 18 40% 92%;
+    --divider-soft: 240 8% 30%;
+    --noise-alpha: 0.05;
+}
+
+:root.dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 5.9% 10%;
+    --card-foreground: 0 0% 98%;
+    --primary: 18 65% 55%;                /* <-- (Earthen Terracotta) */
+    --primary-foreground: 0 0% 98%;      /* Teks Putih agar kontras di atas Terracotta */
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --ring: 0 0% 98%;
+    --text-muted: 240 5% 64.9%;
+    --surface-alt: 240 5% 14%;
+    --surface-warm: 20 20% 16%;
+    --surface-accent: 18 25% 22%;
+    --divider-soft: 0 0% 60%;
+    --noise-alpha: 0.04;
+}
+
+/* Kustomisasi Tipografi untuk Judul */
+:root {
+    --font-heading: 'Lato', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+body, .bg-background, .bg-card, .text-foreground, .border-border, .text-primary, .bg-primary, #modal-content, header, #back-to-top-btn {
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Skip link */
+.skip-link { position: absolute; left: -999px; top: 0; background: hsl(var(--primary)); color: hsl(var(--primary-foreground)); padding: 0.75rem 1rem; z-index: 10000; border-radius: 0 0 6px 6px; font-weight: 600; }
+.skip-link:focus { left: 1rem; outline: 3px solid hsl(var(--primary)); }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    /* Hindari rubber-banding memicu pergeseran header di iOS/macOS */
+    overscroll-behavior-y: none;
+    /* Ruang untuk header fixed (h-16 => 64px) */
+    padding-top: 64px;
+}
+
+#interactive-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#cursor-spotlight {
+    position: fixed;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, hsla(0, 0%, 0%, 0.05) 0%, transparent 60%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out, transform 0.2s ease-out;
+    opacity: 0;
+}
+
+body:hover #cursor-spotlight {
+    opacity: 1;
+}
+
+:root.dark #cursor-spotlight {
+     background: radial-gradient(circle, hsla(0, 0%, 100%, 0.06) 0%, transparent 60%);
+}
+
+/* Dim spotlight when over hero */
+#cursor-spotlight.dim {
+    opacity: 0.35 !important;
+}
+
+/* On small screens, reduce spotlight visibility further */
+@media (max-width: 640px) {
+    #cursor-spotlight { display: none !important; }
+}
+
+@keyframes spotlight-pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+#cursor-spotlight.pulse {
+    animation: spotlight-pulse 0.4s ease-out;
+}
+
+
+.card-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+.group:hover .card-3d {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px hsla(var(--foreground), 0.1);
+}
+.card-3d::before {
+    content: "";
+    position: absolute;
+    left: var(--x, 50%);
+    top: var(--y, 50%);
+    width: 200%;
+    padding-bottom: 200%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle at center, hsla(var(--primary), 0.08) 0%, transparent 40%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;
+}
+.card-3d:hover::before {
+    opacity: 1;
+}
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+.nav-link:hover {
+    color: hsl(var(--primary));
+    transform: translateY(-2px);
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 50%;
+    background-color: hsl(var(--primary));
+    transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+    left: 0;
+}
+
+.btn {
+    transition: all 0.3s ease-in-out;
+}
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px hsla(var(--foreground), 0.1);
+}
+.btn:focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 3px;
+}
+.btn:active {
+    transform: scale(0.98);
+}
+#modal-overlay {
+    transition: opacity 0.3s ease-in-out;
+}
+#modal-content {
+    background-color: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.modal-detail-item {
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+.modal-detail-item.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.lang-switcher {
+    position: relative;
+}
+.lang-switcher button {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s ease-out;
+}
+.lang-switcher .glider {
+    position: absolute;
+    top: 2px;
+    bottom: 2px;
+    background-color: hsl(var(--background));
+    border-radius: 9999px;
+    box-shadow: 0 1px 3px hsla(var(--foreground), 0.1);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 5;
+}
+.lang-switcher button.active {
+    color: hsl(var(--foreground));
+    font-weight: 600;
+}
+.skill-bar-container {
+    background-color: hsl(var(--secondary));
+    border-radius: 9999px;
+    overflow: hidden;
+    width: 100%;
+    height: 8px;
+}
+.skill-bar-fill {
+    background-color: hsl(var(--primary));
+    height: 100%;
+    width: 0;
+    border-radius: 9999px;
+    transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes slide-down {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+header {
+    animation: slide-down 0.6s ease-out;
+}
+header.scrolled {
+    box-shadow: 0 2px 10px hsla(var(--foreground), 0.05);
+    border-color: transparent;
+}
+
+/* Reduce backdrop blur intensity on small screens for perf */
+header { backdrop-filter: blur(8px); }
+@media (min-width: 640px) { header { backdrop-filter: blur(12px); } }
+
+/* Horizontal metrics scroll on mobile */
+.metrics-scroll {
+    display: grid;
+    grid-template-columns: repeat(4,minmax(160px,1fr));
+}
+@media (max-width: 640px) {
+    .metrics-scroll {
+        display: flex;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 0.5rem;
+        scrollbar-width: thin;
+        gap: 1rem;
+    mask-image: linear-gradient(to right, transparent 0, black 24px, black calc(100% - 24px), transparent 100%);
+    }
+    .metrics-scroll > div {
+        min-width: 70%;
+        flex: 0 0 auto;
+        scroll-snap-align: center;
+    }
+}
+
+#back-to-top-btn {
+    opacity: 0;
+    transform: translateY(100px);
+    pointer-events: none;
+}
+#back-to-top-btn.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+#back-to-top-btn:hover {
+    transform: scale(1.1);
+    background-color: hsl(var(--primary));
+}
+#back-to-top-btn:hover svg {
+    color: hsl(var(--primary-foreground));
+}
+
+/* Safe area offset for floating buttons on devices with home indicator */
+.fixed-bottom-safe { bottom: calc(1rem + env(safe-area-inset-bottom)); }
+
+/* Pastikan target anchor tidak tertutup header fixed */
+section[id] {
+    scroll-margin-top: 80px; /* sedikit lebih besar dari tinggi header */
+}
+
+.animated-dot {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background-color: hsl(var(--text-muted));
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.stagger-item:hover .animated-dot,
+.modal-detail-item:hover .animated-dot {
+    transform: scale(1.5);
+    background-color: hsl(var(--primary));
+    box-shadow: 0 0 8px hsla(var(--primary), 0.5);
+}
+
+/* Styling untuk Tombol Kontak & AI Assistant */
+#ai-fab-btn {
+     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+#ai-fab-btn.fade-out {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+}
+.fab-options {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* 12px */
+    margin-bottom: 0.75rem; /* 12px */
+    pointer-events: none;
+}
+.fab-option {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.fab-container.active .fab-options {
+    pointer-events: auto;
+}
+.fab-container.active .fab-option {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+.fab-container.active .fab-option:nth-child(1) { /* WhatsApp button */
+    transition-delay: 0.2s;
+}
+.fab-container.active .fab-option:nth-child(2) { /* Email button */
+    transition-delay: 0.3s;
+}
+.fab-main-button {
+     transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), box-shadow 0.3s ease-in-out;
+}
+.fab-container.active .fab-main-button {
+    box-shadow: 0 0 20px hsla(var(--primary), 0.4);
+}
+.fab-option:hover {
+    transform: scale(1.15) !important;
+}
+
+.fab-main-button .icon-closed {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+    transition: all 0.5s ease-in-out;
+}
+.fab-main-button .icon-open {
+    opacity: 0;
+    transform: rotateY(90deg) scale(0.8);
+    transition: all 0.5s ease-in-out;
+}
+.fab-container.active .fab-main-button .icon-closed {
+    opacity: 0;
+    transform: rotateY(-90deg) scale(0.8);
+}
+.fab-container.active .fab-main-button .icon-open {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+}
+
+/* Efek Bounce */
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+}
+.bouncing {
+    animation: bounce 0.4s ease-in-out;
+}
+
+.text-muted { color: hsl(var(--text-muted)); }
+.bg-background { background-color: hsl(var(--background)); }
+.bg-card { background-color: hsl(var(--card)); }
+.bg-primary { background-color: hsl(var(--primary)); }
+.text-primary-foreground { color: hsl(var(--primary-foreground)); }
+.bg-secondary { background-color: hsl(var(--secondary)); }
+.text-secondary-foreground { color: hsl(var(--secondary-foreground)); }
+.border-border { border-color: hsl(var(--border)); }
+.text-primary { color: hsl(var(--primary)); }
+
+/* Kustomisasi Warna Teks untuk Kartu Skill */
+
+/* 1. Aturan untuk Light Mode (Default) */
+#skills .card-3d h3 {
+    color: hsl(18, 65%, 25%) !important; /* Warna Terracotta Versi Gelap */
+}
+
+/* 2. Aturan Khusus untuk Dark Mode */
+.dark #skills .card-3d h3 {
+    color: hsl(18, 25%, 80%) !important; /* Warna Beige Hangat kita yang semula */
+}
+
+/* Kustomisasi Gradasi Monokrom untuk Judul Utama (Versi Final - Soft) */
+.hero-title {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* Gradasi untuk Light Mode (Versi Soft) */
+  background-image: linear-gradient(to bottom right, 
+    hsl(240, 5%, 30%),      /* Dari: Abu-abu Tua yang lebih lembut */
+    hsl(240, 3.8%, 55%)   /* Ke: Abu-abu Medium yang sedikit lebih terang */
+  );
+}
+
+/* Fallback solid color for gradient heading for older browsers */
+.hero-title { color: hsl(240 5% 30%); }
+.dark .hero-title { color: hsl(var(--foreground)); }
+
+/* Card click affordance */
+.card-3d-container[role="button"] .card-3d::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 2px solid transparent;
+    border-radius: inherit;
+    transition: border-color 0.3s ease;
+    pointer-events: none;
+}
+.card-3d-container[role="button"]:focus-visible .card-3d::after {
+    border-color: hsl(var(--primary));
+}
+.card-3d-container[role="button"] .card-3d .affordance-label {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: hsla(var(--background),0.7);
+    backdrop-filter: blur(4px);
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    padding: 2px 6px;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--border));
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 0.3s ease;
+}
+.card-3d-container[role="button"]:hover .affordance-label,
+.card-3d-container[role="button"]:focus-visible .affordance-label {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* (Cleanup) Removed unused .section-about, .full-bleed, .section-location styles */
+
+.dark .hero-title {
+  /* Gradasi untuk Dark Mode (Tetap sama seperti sebelumnya) */
+  background-image: linear-gradient(to bottom right, 
+    hsl(var(--foreground)), 
+    hsl(var(--text-muted))
+  );
+}
+/* Soft background overlay behind hero text for readability */
+.hero-soft-bg {
+    background: linear-gradient(
+        to bottom,
+        hsla(var(--background), 0.75),
+        hsla(var(--background), 0.45)
+    );
+    backdrop-filter: blur(2px);
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .card-3d, .group:hover .card-3d { transform: none !important; }
+    #cursor-spotlight { display: none !important; }
+}
