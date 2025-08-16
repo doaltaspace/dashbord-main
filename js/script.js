@@ -14,11 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
             aboutTitle: 'About Me',
             aboutParagraph1: "I am a dynamic professional with over three years of experience in logistics, administration, and operational supervision. My journey has equipped me with a robust skill set in process optimization, data management, and team leadership. I thrive on identifying inefficiencies and implementing data-driven solutions to enhance accuracy and productivity.",
             aboutParagraph2: "My passion for continuous learning has led me to explore the world of product management, where I am currently honing my skills in SDLC, Agile methodologies, and user-centric design. I am excited to leverage my operational background to build products that are not only efficient but also deliver exceptional value to users.",
+            aboutParagraph3: "I enjoy building scalable internal tooling and leveraging automation and AI (from spreadsheet scripting to lightweight prompt-assisted analysis) to unlock productivity for teams. I'm driven by clarity, measurable outcomes, and collaborative iteration—values I aim to carry into a full product management role.",
             competenciesList: `<li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Operational Management</li><li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Supply Chain & Logistics</li><li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Data Analysis & Accuracy</li><li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Product Lifecycle (SDLC)</li><li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Stakeholder Management</li>`,
             careerTitle: 'Career Experience',
             projectsTitle: 'Featured Projects',
             skillsTitle: 'Technical & Product Skills',
             educationTitle: 'Education & Professional Development',
+            workflowTitle: 'My Smart Workflow',
+            workflowParagraph: "For me, the best technology saves time on repetitive tasks so I can focus on creative, strategic problem solving. I actively integrate modern tools and AI into my daily workflow—from research to execution—to achieve results that are faster and smarter.",
             footerText: '&copy; 2025 Aldo Doalta Sanonifan. All rights reserved.',
             projectCategory: 'Category',
             aiTitle: 'AI Assistant',
@@ -30,7 +33,15 @@ document.addEventListener('DOMContentLoaded', function() {
             skillDetails: 'Skill Details',
             copy: 'Copy',
             copied: 'Copied',
-            metricsHint: 'Swipe to see more'
+            metricsHint: 'Swipe to see more',
+            workflowStep1Title: 'Research & Analysis',
+            workflowStep1Desc: 'Collect data, understand context',
+            workflowStep2Title: 'Define & Prioritize',
+            workflowStep2Desc: 'Frame problems, set OKRs, pick bets',
+            workflowStep3Title: 'Design & Validate',
+            workflowStep3Desc: 'Sketch flows, wireframe, quick tests',
+            workflowStep4Title: 'Execute & Iterate',
+            workflowStep4Desc: 'Ship, measure, and refine continuously'
         },
     id: {
             navAbout: 'Tentang', navExperience: 'Pengalaman', navProjects: 'Proyek', navSkills: 'Keahlian', navEducation: 'Pendidikan', navContact: 'LinkedIn',
@@ -45,11 +56,14 @@ document.addEventListener('DOMContentLoaded', function() {
             aboutTitle: 'Tentang Saya',
             aboutParagraph1: "Saya adalah seorang profesional dinamis dengan pengalaman lebih dari tiga tahun di bidang logistik, administrasi, dan supervisi operasional. Perjalanan ini telah membekali saya dengan keahlian yang kuat dalam optimisasi proses, manajemen data, dan kepemimpinan tim. Saya berkembang dengan mengidentifikasi inefisiensi dan menerapkan solusi berbasis data untuk meningkatkan akurasi dan produktivitas.",
             aboutParagraph2: "Semangat saya untuk terus belajar telah membawa saya untuk menjelajahi dunia manajemen produk, di mana saat ini saya sedang mengasah keterampilan dalam SDLC, metodologi Agile, dan desain yang berpusat pada pengguna. Saya antusias untuk memanfaatkan latar belakang operasional saya untuk membangun produk yang tidak hanya efisien tetapi juga memberikan nilai luar biasa bagi pengguna.",
+            aboutParagraph3: "Saya menikmati membangun tooling internal yang skalabel dan memanfaatkan otomatisasi serta AI (dari scripting spreadsheet hingga analisis berbantuan prompt ringan) untuk membuka produktivitas tim. Saya terdorong oleh kejernihan, hasil yang terukur, dan iterasi kolaboratif—nilai yang ingin saya bawa penuh dalam peran manajemen produk.",
             competenciesList: `<li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Manajemen Operasional</li><li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Supply Chain & Logistics</li><li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Analisis & Akurasi Data</li><li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Product Lifecycle (SDLC)</li><li class="flex items-center stagger-item"><span class="animated-dot mr-3 flex-shrink-0"></span>Manajemen Pemangku Kepentingan</li>`,
             careerTitle: 'Pengalaman Karier',
             projectsTitle: 'Proyek Unggulan',
             skillsTitle: 'Keahlian Teknis & Produk',
             educationTitle: 'Pendidikan & Pengembangan Profesional',
+            workflowTitle: 'Workflow Cerdas Saya',
+            workflowParagraph: "Bagi saya, teknologi terbaik adalah yang mampu menghemat waktu untuk hal-hal repetitif, sehingga saya bisa lebih fokus pada pemecahan masalah yang kreatif dan strategis. Saya secara aktif mengintegrasikan berbagai tools modern dan AI ke dalam alur kerja harian saya, mulai dari riset hingga eksekusi, untuk mencapai hasil yang lebih cepat dan lebih cerdas.",
             footerText: '&copy; 2025 Aldo Doalta Sanonifan. Hak cipta dilindungi.',
             projectCategory: 'Kategori',
             aiTitle: 'Asisten AI',
@@ -61,8 +75,64 @@ document.addEventListener('DOMContentLoaded', function() {
             skillDetails: 'Detail Keahlian',
             copy: 'Salin',
             copied: 'Tersalin',
-            metricsHint: 'Geser untuk melihat lainnya'
+            metricsHint: 'Geser untuk melihat lainnya',
+            workflowStep1Title: 'Riset & Analisis',
+            workflowStep1Desc: 'Kumpulkan data, pahami konteks',
+            workflowStep2Title: 'Definisi & Prioritas',
+            workflowStep2Desc: 'Rumuskan masalah, tetapkan OKR, pilih inisiatif',
+            workflowStep3Title: 'Desain & Validasi',
+            workflowStep3Desc: 'Rancang alur, wireframe, uji cepat',
+            workflowStep4Title: 'Eksekusi & Iterasi',
+            workflowStep4Desc: 'Rilis, ukur, dan perbaiki berkelanjutan'
         }
+    };
+
+    // Data dinamis untuk Workflow (menjaga struktur & posisi asli via kelas CSS)
+    const workflowData = {
+        en: [
+            { classWrap:'card', shell:'overlap-group', aria:'wf-step1-desc', titleKey:'workflowStep1Title', descKey:'workflowStep1Desc', svgClass:'workflow-connector group', details:[
+                'Gather quantitative & qualitative inputs (dashboards, ERP, tickets).',
+                'Cluster signals by impact, frequency, urgency to filter noise.',
+                'Establish baseline metrics to measure later delta.'
+            ] },
+            { classWrap:'card-3', shell:'overlap', aria:'wf-step2-desc', titleKey:'workflowStep2Title', descKey:'workflowStep2Desc', svgClass:'workflow-connector img flip-x', details:[
+                'Craft concise problem statements (Who • Pain • Evidence).',
+                'Lightweight prioritisation (RICE/ICE) adapted to context.',
+                'Align OKRs / guardrails before proposing solutions.'
+            ] },
+            { classWrap:'card-2', shell:'overlap-group', aria:'wf-step3-desc', titleKey:'workflowStep3Title', descKey:'workflowStep3Desc', svgClass:'workflow-connector group', details:[
+                'Sketch flows & low‑fi wireframes focused on comprehension speed.',
+                'Quick validation loops (desk check, peer sample, feasibility).',
+                'Trim scope to accelerate validated learning.'
+            ] },
+            { classWrap:'research-analysis-wrapper workflow-card', shell:'', aria:'wf-step4-desc', titleKey:'workflowStep4Title', descKey:'workflowStep4Desc', svgClass:null, details:[
+                'Ship incrementally with clear definition of done per slice.',
+                'Instrument metrics & feedback channels on release.',
+                'Iterate based on signals; archive learnings for next bets.'
+            ] }
+        ],
+        id: [
+            { classWrap:'card', shell:'overlap-group', aria:'wf-step1-desc', titleKey:'workflowStep1Title', descKey:'workflowStep1Desc', svgClass:'workflow-connector group', details:[
+                'Kumpulkan input kuantitatif & kualitatif (dashboard, ERP, tiket).',
+                'Kelompokkan sinyal berdasar dampak, frekuensi, urgensi.',
+                'Tetapkan baseline metrik untuk ukur perubahan.'
+            ] },
+            { classWrap:'card-3', shell:'overlap', aria:'wf-step2-desc', titleKey:'workflowStep2Title', descKey:'workflowStep2Desc', svgClass:'workflow-connector img flip-x', details:[
+                'Rumuskan masalah ringkas (Siapa • Nyeri • Bukti).',
+                'Prioritasi ringan (RICE/ICE) sesuai konteks.',
+                'Selaraskan OKR / guardrail sebelum solusi.'
+            ] },
+            { classWrap:'card-2', shell:'overlap-group', aria:'wf-step3-desc', titleKey:'workflowStep3Title', descKey:'workflowStep3Desc', svgClass:'workflow-connector group', details:[
+                'Sketsa alur & wireframe low‑fi untuk kecepatan pemahaman.',
+                'Loop validasi cepat (desk check, sampel kecil, feasibility).',
+                'Perkecil scope agar pembelajaran lebih cepat.'
+            ] },
+            { classWrap:'research-analysis-wrapper workflow-card', shell:'', aria:'wf-step4-desc', titleKey:'workflowStep4Title', descKey:'workflowStep4Desc', svgClass:null, details:[
+                'Eksekusi bertahap dengan definisi selesai jelas.',
+                'Instrumentasi metrik & kanal feedback saat rilis.',
+                'Iterasi berdasar sinyal; arsipkan pembelajaran.'
+            ] }
+        ]
     };
 
     // Objek untuk menyimpan semua data portofolio
@@ -71,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { type: 'career', role: 'Warehouse Supervisor', company: 'PT. Moladin Digital Indonesia', period: 'March 2025 – Present', industry: 'Fintech (Auto Financing)', details: ['Ensured all branch operational SOPs (Standard Operating Procedures) were executed in compliance with company regulations, assuming full responsibility for their implementation.','Managed all branch assets and facilities, including the procurement of office necessities.','Implemented stringent internal controls for managing the inflow and outflow of over 200 assets (vehicle ownership documents & units) monthly, successfully preventing asset misuse, mitigating potential fraud, and maintaining a 99.8% data accuracy rate.','Coordinated intensively with the Head Office (HO) team for reporting and the synchronization of operational strategies.','Established coordination with other branches to ensure the smooth transfer process of vehicle ownership documents and units between locations.','Collaborated with cross-functional teams (Business, Marketing, Collection) to implement risk mitigation strategies and minimize potential fraud.'] },
             { type: 'career', role: 'Administration Staff', company: 'PT. Moladin Digital Indonesia', period: 'July 2024 - March 2025', industry: 'Fintech (Auto Financing)', details: ['Managed and recorded collateral asset data (vehicle ownership documents) and repossessed units into the company\'s information system.','Verified the authenticity and completeness of vehicle ownership documents to prevent fraud and ensure compliance.','Monitored the movement of incoming and outgoing vehicle ownership documents using an internal tracking system to guarantee document security.','Developed a target monitoring dashboard that improved team performance tracking efficiency by 50% and reduced manual recapitulation time.','Fostered collaboration with related teams to ensure a seamless handover process for vehicle ownership documents and repossessed units.'] },
             { type: 'career', role: 'PPIC Staff', company: 'PT. Rajalu', period: 'July 2023 - May 2024', industry: 'Manufacturing (Aluminium)', details: ['Created production schedules based on demand forecasts and customer orders using Odoo and Microsoft Excel.','Monitored production processes and adjusted schedules utilizing Excel/Google Sheets (Pivot Tables, VLOOKUP, Macros) and MRP software.','Coordinated with manufacturing and inventory teams using WMS and TMS to maintain optimal stock levels.','Implemented solutions based on ERP data analysis that successfully reduced production bottlenecks by 15% and increased on-time delivery by 10%.','Generated production reports using Odoo and Excel to support continuous improvement initiatives.'] },
-            { type: 'career', role: 'Logistic Administration', company: 'PT. Juali Teknologi Indonesia', period: 'October 2021 - December 2022', industry: 'Logistics / E‑Commerce Ops', details: ['Monitored and controlled logistics operations, including invoice handling, using Odoo ERP and Microsoft Excel.','Analyzed and filtered orders with indications of fraudulent activity using an internal detection system.','Managed the procurement and processing of goods with Odoo to ensure timely acquisition.','Inspected and verified documents and transactions for incoming and outgoing goods using a Warehouse Management System (WMS).','Operated logistics software (Odoo ERP, WMS, and TMS) to track shipments.'] }
+            { type: 'career', role: 'Logistic Administration', company: 'Kitabeli E-Commerce', period: 'October 2021 - December 2022', industry: 'Logistics / E‑Commerce Ops', details: ['Monitored and controlled logistics operations, including invoice handling, using Odoo ERP and Microsoft Excel.','Analyzed and filtered orders with indications of fraudulent activity using an internal detection system.','Managed the procurement and processing of goods with Odoo to ensure timely acquisition.','Inspected and verified documents and transactions for incoming and outgoing goods using a Warehouse Management System (WMS).','Operated logistics software (Odoo ERP, WMS, and TMS) to track shipments.'] }
         ],
         education: [
             { type: 'education', title: 'Bootcamp Product Management', institution: 'Harisenin.com', period: '2025 (In Progress)', details: ['Key Learnings: SDLC (Agile, Waterfall), Design Thinking, Wireframing, Scrum, PRD, OKR, Product Roadmap, Market & Competitor Research, MVP Definition, Stakeholder Management.'] },
@@ -106,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { type: 'project', title: 'Product Analysis: E-Commerce Feature', category: 'Case Study', image: 'https://placehold.co/600x400/111827/f3f4f6?text=E-Commerce+Project', details: ['Conducted a market analysis to identify gaps in a leading e-commerce platform.','Developed a PRD for a new "Try Before You Buy" feature, including user stories and acceptance criteria.','Created low-fidelity wireframes and user flows to illustrate the concept.','Defined OKRs to measure the feature\'s potential success and impact on user engagement.'] },
             { type: 'project', title: 'Logistics Dashboard Redesign', category: 'UI/UX Concept', image: 'https://placehold.co/600x400/1f2937/f3f4f6?text=Logistics+Dashboard', details: ['Identified pain points in the existing logistics dashboard through user interviews.','Redesigned the information architecture for better data visibility and quicker access to critical information.','Created interactive prototypes using Figma to test the new design with stakeholders.','The new design concept showed a potential 30% reduction in time-on-task for key operations.'] },
             { type: 'project', title: 'Inventory Optimization System', category: 'Operational Improvement', image: 'https://placehold.co/600x400/374151/f3f4f6?text=Inventory+System', details: ['Analyzed historical sales and stock data to identify patterns of overstocking and stockouts.','Proposed a new inventory management strategy based on ABC analysis and just-in-time principles.','Developed an Excel-based tool to automate reorder point calculations.','Successfully reduced holding costs by 15% and stockout incidents by 20% in a 3-month pilot.'] }
-        ]
+    ]
     };
 
     const data_id = {
@@ -114,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { type: 'career', role: 'Warehouse Supervisor', company: 'PT. Moladin Digital Indonesia', period: 'Maret 2025 – Sekarang', industry: 'Fintech (Pembiayaan Otomotif)', details: ['Memastikan seluruh SOP (prosedur) operasional cabang berjalan sesuai aturan dan bertanggung jawab penuh atas pelaksanaannya.','Mengelola penuh aset dan gedung cabang, termasuk pemenuhan kebutuhan kantor.','Menerapkan kontrol internal yang ketat pada pengelolaan arus keluar-masuk lebih dari 200 aset (BPKB & Unit) per bulan, berhasil mencegah terjadinya penyalahgunaan aset, serta berhasil menekan potensi fraud dan mempertahankan akurasi data hingga 99.8%.','Berkoordinasi secara intensif dengan tim Head Office (HO) untuk pelaporan dan sinkronisasi strategi operasional.','Menjalin koordinasi dengan cabang lain untuk kelancaran proses transfer BPKB dan unit antar cabang.','Berkolaborasi dengan tim lintas fungsi (Bisnis, Marketing, Collection) untuk menerapkan strategi mitigasi risiko dan meminimalisir potensi fraud.'] },
             { type: 'career', role: 'Administration Staff', company: 'PT. Moladin Digital Indonesia', period: 'Juli 2024 - Maret 2025', industry: 'Fintech (Pembiayaan Otomotif)', details: ['Mengelola data aset jaminan (BPKB) dan unit retract (tarikan) ke dalam sistem informasi perusahaan.','Memverifikasi keaslian dan kelengkapan dokumen BPKB untuk mencegah penipuan dan memastikan kepatuhan.','Memantau pergerakan BPKB masuk dan keluar menggunakan sistem pelacakan internal untuk menjamin keamanan dokumen.','Mengembangkan dasbor pemantauan target yang meningkatkan efisiensi pelacakan kinerja tim sebesar 50% dan mengurangi waktu rekap manual.','Membangun koloborasi dengan tim terkait untuk memastikan kelancaran proses serah terima dokumen BPKB dan unit retract.'] },
             { type: 'career', role: 'PPIC Staff', company: 'PT. Rajalu', period: 'Juli 2023 - Mei 2024', industry: 'Manufaktur (Aluminium)', details: ['Membuat jadwal produksi berdasarkan perkiraan permintaan dan pesanan pelanggan menggunakan Odoo dan Microsoft Excel.','Memantau proses produksi dan menyesuaikan jadwal menggunakan Excel (Pivot Table, VLOOKUP, Makro) dan perangkat lunak MRP.','Berkoordinasi dengan tim manufaktur dan inventaris menggunakan WMS dan TMS untuk menjaga tingkat stok optimal.','Menerapkan solusi berdasarkan analisis data ERP yang sukses mengurangi hambatan produksi sebesar 15% dan meningkatkan ketepatan waktu pengiriman (on-time delivery) sebesar 10%.','Membuat laporan hasil produksi menggunakan Odoo dan Excel untuk mendukung perbaikan berkelanjutan.'] },
-            { type: 'career', role: 'Logistic Administration', company: 'PT. Juali Teknologi Indonesia', period: 'Oktober 2021 - Desember 2022', industry: 'Logistik / Operasional E‑Commerce', details: ['Memantau dan mengontrol operasi logistik, termasuk penanganan faktur, menggunakan Odoo ERP dan Microsoft Excel.','Menganalisis dan menyaring pesanan yang terindikasi penipuan menggunakan sistem deteksi internal.','Mengelola pembelian dan pemrosesan barang dengan Odoo untuk memastikan pengadaan tepat waktu.','Memeriksa dan memverifikasi dokumen serta transaksi barang masuk dan keluar menggunakan WMS.','Mengoperasikan perangkat lunak logistik (Odoo ERP, WMS, dan TMS) untuk melacak pengiriman.'] }
+            { type: 'career', role: 'Logistic Administration', company: 'Kitabeli E-Commerce', period: 'Oktober 2021 - Desember 2022', industry: 'Logistik / Operasional E‑Commerce', details: ['Memantau dan mengontrol operasi logistik, termasuk penanganan faktur, menggunakan Odoo ERP dan Microsoft Excel.','Menganalisis dan menyaring pesanan yang terindikasi penipuan menggunakan sistem deteksi internal.','Mengelola pembelian dan pemrosesan barang dengan Odoo untuk memastikan pengadaan tepat waktu.','Memeriksa dan memverifikasi dokumen serta transaksi barang masuk dan keluar menggunakan WMS.','Mengoperasikan perangkat lunak logistik (Odoo ERP, WMS, dan TMS) untuk melacak pengiriman.'] }
         ],
         education: [
              { type: 'education', title: 'Bootcamp Manajemen Produk', institution: 'Harisenin.com', period: '2025 (Sedang Berlangsung)', details: ['Pembelajaran Utama: SDLC (Agile, Waterfall), Design Thinking, Wireframing, Scrum, PRD, OKR, Product Roadmap, Riset Pasar & Kompetitor, Definisi MVP, Manajemen Pemangku Kepentingan.'] },
@@ -149,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { type: 'project', title: 'Analisis Produk: Fitur E-Commerce', category: 'Studi Kasus', image: 'https://placehold.co/600x400/111827/f3f4f6?text=Proyek+E-Commerce', details: ['Melakukan analisis pasar untuk mengidentifikasi celah pada platform e-commerce terkemuka.','Mengembangkan PRD untuk fitur baru "Coba Sebelum Beli", termasuk <b><i>user stories</i></b> dan kriteria penerimaan.','Membuat <b><i>wireframe</i></b> low-fidelity dan alur pengguna untuk mengilustrasikan konsep.','Mendefinisikan OKR untuk mengukur potensi keberhasilan fitur dan dampaknya pada keterlibatan pengguna.'] },
             { type: 'project', title: 'Desain Ulang Dasbor Logistik', category: 'Konsep UI/UX', image: 'https://placehold.co/600x400/1f2937/f3f4f6?text=Dasbor+Logistik', details: ['Mengidentifikasi <b><i>pain points</i></b> pada dasbor logistik yang ada melalui wawancara pengguna.','Mendesain ulang arsitektur informasi untuk visibilitas data yang lebih baik dan akses lebih cepat ke informasi penting.','Membuat prototipe interaktif menggunakan Figma untuk menguji desain baru dengan para pemangku kepentingan.','Konsep desain baru menunjukkan potensi pengurangan waktu pengerjaan tugas sebesar 30% untuk operasi utama.'] },
             { type: 'project', title: 'Sistem Optimasi Inventaris', category: 'Peningkatan Operasional', image: 'https://placehold.co/600x400/374151/f3f4f6?text=Sistem+Inventaris', details: ['Menganalisis data penjualan dan stok historis untuk mengidentifikasi pola kelebihan stok dan kehabisan stok.','Mengusulkan strategi manajemen inventaris baru berdasarkan analisis ABC dan prinsip <b><i>just-in-time</i></b>.','Mengembangkan alat berbasis Excel untuk mengotomatisasi perhitungan titik pemesanan ulang.','Berhasil mengurangi biaya penyimpanan sebesar 15% dan insiden kehabisan stok sebesar 20% dalam uji coba 3 bulan.'] }
-        ]
+    ]
     };
 
     // Mengambil elemen DOM yang akan dimanipulasi
@@ -157,6 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const projectsContainer = document.querySelector('#projects-grid');
     const skillsContainer = document.querySelector('#skills-grid');
     const educationContainer = document.querySelector('#education-grid');
+    const workflowFrame = document.getElementById('workflow-frame');
     
     // Fungsi untuk me-render konten berdasarkan bahasa yang dipilih
     function renderContent(lang) {
@@ -176,32 +247,46 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.getElementById('ai-input').placeholder = currentTranslations.aiPlaceholder;
 
-        // Render bagian Pengalaman Karier
-        careerContainer.innerHTML = '';
-        data.career.forEach((job, index) => {
-            const card = document.createElement('div');
-            card.className = 'card-3d-container cursor-pointer group';
-            card.dataset.type = 'career';
-            card.dataset.index = index;
-            card.innerHTML = `
-                <div class="card card-3d rounded-lg p-6 border border-border bg-card h-full flex flex-col shadow-lg hover:shadow-2xl">
-                    <div class="flex justify-between items-start">
-                        <h3 class="font-semibold text-primary">${job.role}</h3>
-                        <div class="text-xs text-muted">${job.period}</div>
-                    </div>
-                    <p class="text-sm text-muted mt-1">${job.company}${job.industry ? ` • ${job.industry}` : ''}</p>
-                    <p class="text-sm mt-4 flex-grow">${job.details[0]}</p>
-                    
-                    <div class="text-right mt-4 flex justify-end items-center">
-                        <span class="text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-2">${t.learnMore}</span>
-                        <div class="w-9 h-9 rounded-full bg-secondary flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:scale-110 group-hover:shadow-lg">
-                            <svg class="w-5 h-5 text-secondary-foreground transition-all duration-300 group-hover:text-primary-foreground group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
-                        </div>
+        // Render bagian Pengalaman Karier (timeline)
+    // Insert timeline graphic (inline SVG) then items
+                careerContainer.innerHTML = `<svg width="167" height="710" viewBox="0 0 167 710" fill="none" xmlns="http://www.w3.org/2000/svg" class="timeline-graphic" aria-hidden="true">
+            <g id="Group 3" filter="url(#filter0_d_9_134)">
+            <path id="Vector 2" d="M150 678.5C150 678.5 166 575 134 542.5C102 510 54 534 30 510C6.00003 486 -1.00006 406.5 30.4999 374C62 341.5 103 373 134.5 341.5C149.934 326.066 157.565 300.91 157.689 275.5C157.818 249.048 149.811 222.321 134 206C103 174 62.5 206 30 174C-2.5 142 13.9998 22 13.9998 22" stroke="#D66F42" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="22 22"/>
+            <circle id="Ellipse 2" cx="147.5" cy="690.5" r="11.5" fill="#BF633B"/>
+            <circle id="Ellipse 3" cx="15.5" cy="11.5" r="11.5" fill="#BF633B"/>
+            </g>
+            <defs>
+            <filter id="filter0_d_9_134" x="0" y="0" width="166.191" height="710" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="2"/>
+            <feComposite in2="hardAlpha" operator="out"/>
+            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_134"/>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_134" result="shape"/>
+            </filter>
+            </defs>
+            </svg>`;
+    data.career.forEach((job, index) => {
+        const side = (index % 2 === 0) ? 'right' : 'left';
+        const item = document.createElement('div');
+        item.className = `timeline-item item-${index+1} ${side}`;
+        // Outer acts as 3D container; inner card mirrors other sections (.card.card-3d)
+        item.innerHTML = `
+            <div class="card-3d-container group" data-type="career" data-index="${index}" tabindex="0" role="button" aria-label="${job.role} @ ${job.company}">
+                <div class="experience-card card card-3d shadow-lg hover:shadow-2xl overflow-hidden transition-shadow duration-400">
+                    <h3>${job.role}</h3>
+                    <div class="date">${job.period}</div>
+                    <p class="company">${job.company}${job.industry ? ` • ${job.industry}` : ''}</p>
+                    <div class="arrow-link" aria-hidden="true">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.4"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                     </div>
                 </div>
-            `;
-            careerContainer.appendChild(card);
-        });
+            </div>
+        `;
+        careerContainer.appendChild(item);
+    });
 
         // Render bagian Proyek
         projectsContainer.innerHTML = '';
@@ -278,6 +363,38 @@ document.addEventListener('DOMContentLoaded', function() {
             educationContainer.appendChild(card);
         });
         
+        // Render Workflow dinamis (menggunakan struktur absolut lama agar posisi & konektor identik)
+        if (workflowFrame) {
+            const wf = workflowData[lang];
+            workflowFrame.innerHTML = '';
+            wf.forEach((step, i) => {
+                const wrapper = document.createElement('div');
+                wrapper.className = step.classWrap;
+                wrapper.setAttribute('role','listitem');
+                wrapper.setAttribute('aria-posinset', String(i+1));
+                wrapper.setAttribute('aria-setsize', String(wf.length));
+                let svg = '';
+                if (step.svgClass) {
+                    svg = `<svg class="${step.svgClass}" width="102" height="52" viewBox="0 0 102 52" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M3 3H95V28" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="11 11"/><path d="M102 45C102 48.866 98.866 52 95 52C91.134 52 88 48.866 88 45C88 41.134 91.134 38 95 38C98.866 38 102 41.134 102 45Z" fill="currentColor"/></svg>`;
+                }
+                const title = translations[lang][step.titleKey];
+                const desc = translations[lang][step.descKey];
+                if (step.shell) {
+                    wrapper.innerHTML = `${svg}<div class="${step.shell} workflow-card card-3d-container" tabindex="0" role="button" data-type="workflow" data-index="${i}" aria-describedby="${step.aria}"><div class="workflow-card-inner card card-3d"><div class="research-analysis"><div class="div"><span class="span" data-lang-key="${step.titleKey}">${title}<br /></span><span id="${step.aria}" class="text-wrapper-2" data-lang-key="${step.descKey}">${desc}</span></div></div></div></div>`;
+                } else {
+                    // outer sudah workflow-card (step.classWrap mengandung workflow-card)
+                    wrapper.setAttribute('tabindex','0');
+                    wrapper.setAttribute('data-type','workflow');
+                    wrapper.setAttribute('data-index', String(i));
+                    wrapper.setAttribute('aria-describedby', step.aria);
+                    // Tambahkan struktur 3D container & card standar
+                    wrapper.className += ' card-3d-container';
+                    wrapper.innerHTML = `${svg}<div class="workflow-card-inner card card-3d"><div class="research-analysis"><div class="div"><span class="span" data-lang-key="${step.titleKey}">${title}<br /></span><span id="${step.aria}" class="text-wrapper-2" data-lang-key="${step.descKey}">${desc}</span></div></div></div>`;
+                }
+                workflowFrame.appendChild(wrapper);
+            });
+        }
+
         // Terapkan kembali efek 3D dan animasi skill bar
         attach3DEffects();
         setTimeout(() => {
@@ -292,32 +409,56 @@ document.addEventListener('DOMContentLoaded', function() {
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         document.querySelectorAll('.card-3d-container').forEach(container => {
             const card = container.querySelector('.card-3d');
-            // Aksesibilitas interaktif
-            container.setAttribute('tabindex', '0');
-            container.setAttribute('role', 'button');
-            if (!container.getAttribute('aria-label')) container.setAttribute('aria-label', translations[document.documentElement.lang || 'en'].viewDetails);
-            container.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    container.click();
-                }
-            });
-            if (reduceMotion) return; // Skip animasi tilt jika reduce motion
+            const nonInteractive = container.hasAttribute('data-no-interactive');
+            // Setup accessibility
+            if (!nonInteractive) {
+                if (!container.hasAttribute('tabindex')) container.setAttribute('tabindex', '0');
+                if (!container.getAttribute('role')) container.setAttribute('role', 'button');
+                if (!container.getAttribute('aria-label')) container.setAttribute('aria-label', translations[document.documentElement.lang || 'en'].viewDetails);
+                container.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); container.click(); }
+                });
+            }
+            if (reduceMotion || nonInteractive || !card) return;
+
+            // Lerp state
+            let currentRx = 0, currentRy = 0, targetRx = 0, targetRy = 0;
+            let currentScale = 1, targetScale = 1;
+            let animating = false;
+            const MAX = 4; // derajat maksimum (subtle)
+            const SCALE_HOVER = 1.012;
+
+            function animate(){
+                if (!animating) return;
+                // Lerp faktor (lebih kecil = lebih halus / lambat)
+                currentRx += (targetRx - currentRx) * 0.12;
+                currentRy += (targetRy - currentRy) * 0.12;
+                currentScale += (targetScale - currentScale) * 0.10;
+                const done = Math.abs(currentRx-targetRx) < 0.01 && Math.abs(currentRy-targetRy) < 0.01 && Math.abs(currentScale-targetScale) < 0.002;
+                card.style.transform = `perspective(1000px) rotateX(${currentRx.toFixed(2)}deg) rotateY(${currentRy.toFixed(2)}deg) scale(${currentScale.toFixed(3)})`;
+                if (!done) requestAnimationFrame(animate); else animating = false;
+            }
+            function setTargets(rx, ry, sc){
+                targetRx = rx; targetRy = ry; targetScale = sc;
+                if (!animating){ animating = true; requestAnimationFrame(animate); }
+            }
+
             container.addEventListener('mousemove', (e) => {
                 const rect = container.getBoundingClientRect();
                 const x = e.clientX - rect.left;
                 const y = e.clientY - rect.top;
-                card.style.setProperty('--x', `${x}px`);
-                card.style.setProperty('--y', `${y}px`);
-                const { width, height } = rect;
-                const rotateX = (y / height - 0.5) * -6; // Kurangi intensitas
-                const rotateY = (x / width - 0.5) * 6;
-                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            });
-            container.addEventListener('mouseleave', () => {
-                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-            });
+                const px = x / rect.width; // 0..1
+                const py = y / rect.height;
+                const rx = (py - 0.5) * -2 * MAX; // invert Y for natural tilt
+                const ry = (px - 0.5) * 2 * MAX;
+                setTargets(rx, ry, SCALE_HOVER);
+            }, { passive: true });
+            container.addEventListener('mouseenter', () => setTargets(0,0,SCALE_HOVER));
+            container.addEventListener('mouseleave', () => setTargets(0,0,1));
+            container.addEventListener('focus', () => setTargets(0,0,SCALE_HOVER));
+            container.addEventListener('blur', () => setTargets(0,0,1));
         });
+    // Workflow cards now share the same subtle tilt via global handler above.
     }
 
     // Logika untuk Language Switcher
@@ -426,9 +567,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const lang = document.documentElement.lang || 'en';
         const categoryText = translations[lang].projectCategory || 'Category';
         const isCareer = type === 'career';
+        const isWorkflow = type === 'workflow';
         const subtitleLine = isCareer && item.company
             ? `${item.company}${item.industry ? ' • ' + item.industry : ''}`
-            : (type === 'projects' ? `${categoryText}: ${item.category}` : (item.institution || 'Skill Details'));
+            : (type === 'projects' ? `${categoryText}: ${item.category}` : (item.institution || (isWorkflow ? translations[lang].workflowTitle : 'Skill Details')));
 
         modalHeader.innerHTML = `
             <div>
@@ -512,16 +654,20 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.addEventListener('click', (e) => {
-        const card = e.target.closest('.card-3d-container');
+        const card = e.target.closest('.card-3d-container, .workflow-card, .research-analysis-wrapper.workflow-card');
         if (card) {
             const type = card.dataset.type;
             const index = card.dataset.index;
             const lang = document.documentElement.lang || 'en';
             const data = lang === 'id' ? data_id : data_en;
-
-            if (data[type] && data[type][index]) {
-                openModal(data[type][index], type);
+            if (type === 'workflow') {
+                const wf = workflowData[lang][index];
+                if (wf) {
+                    openModal({ title: translations[lang][wf.titleKey], details: wf.details }, 'workflow');
+                }
+                return;
             }
+            if (data[type] && data[type][index]) openModal(data[type][index], type);
         }
     });
 
